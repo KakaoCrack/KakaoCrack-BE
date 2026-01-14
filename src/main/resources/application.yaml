@@ -1,25 +1,26 @@
 spring:
   application:
     name: golden-con-mystery
-
   datasource:
-
     url: jdbc:postgresql://localhost:5432/kakao_mystery
     username: postgres
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
-
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+kakao:
+  client_id: ${KAKAO_CLIENT_ID}
+  redirect_uri: ${KAKAO_REDIRECT_URI}
+  client_secret: ${KAKAO_CLIENT_SECRET}
 
-  cloud:
-    config:
-      enabled: false
+jwt:
+  secret: ${JWT_SECRET}
+  access-expiration: ${JWT_ACCESS_EXPIRATION:3600000} # 1시간
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:1209600000} # 14일
