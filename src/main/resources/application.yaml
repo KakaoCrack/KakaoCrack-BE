@@ -24,3 +24,10 @@ jwt:
   secret: ${JWT_SECRET}
   access-expiration: ${JWT_ACCESS_EXPIRATION:3600000} # 1시간
   refresh-expiration: ${JWT_REFRESH_EXPIRATION:1209600000} # 14일
+
+  springdoc:
+    swagger-ui:
+      path: /hidden-swagger # 경로를 유추하기 어렵게 변경 가능
+      enabled: true        # false로 설정 시 접속 불가
+    api-docs:
+      enabled: true

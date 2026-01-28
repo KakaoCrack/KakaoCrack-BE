@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### 개인 보안 파일 ###
+golden-key.pem
+application.yaml
+*.pem
+.env
