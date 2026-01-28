@@ -12,14 +12,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Table(name = "game_sessions")
 public class GameSession {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    private Integer remainingQuestions = 20; // 명세서 기준 20회
+    private Integer remainingQuestions = 150; // 명세서 기준 20회
     private Integer gameProgress = 0;
     private LocalDateTime startTime = LocalDateTime.now();
     private LocalDateTime endTime;
@@ -28,5 +30,12 @@ public class GameSession {
 
     public GameSession(User user) {
         this.user = user;
+    }
+
+    // ✅ 질문 횟수 감소 메서드 추가
+    public void decreaseQuestions() {
+        if (this.remainingQuestions > 0) {
+            this.remainingQuestions--;
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.kakao.mystery.domain.inventory.controller;
 
+
 import com.kakao.mystery.domain.inventory.service.InventoryService;
 import com.kakao.mystery.global.common.response.ApiResponse;
 import lombok.RequiredArgsConstructor;

@@ -30,5 +30,6 @@ public class UserInventory {
     public UserInventory(GameSession session, Item item) {
         this.gameSession = session;
         this.item = item;
+        this.obtainedAt = LocalDateTime.now();
     }
 }
